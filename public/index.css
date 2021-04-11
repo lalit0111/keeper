@@ -4,7 +4,7 @@
 }
 
 header h1 {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-size: xx-large;
   font-weight: 500;
   color: white;
@@ -16,4 +16,69 @@ header {
   box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
+footer text {
+  font-family: 'Montserrat';
+  color: grey;
+  font-size: small;
+}
+
+.note {
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 3%;
+  width: 15%;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  padding: 20px;
+}
+
+.note h3 {
+  color: grey;
+  font-family: 'Lato' , sans-serif;
+  font-weight: 400;
+  display: block;
+  font-size: 0.7em;
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  float: left;
+  background-color: #fbbc04;
+  border-radius: 50%;
+  margin-top: 22px;
+}
+
+.note h1 {
+  color: black;
+  font-size: 1.2em;
+  font-family: 'Lato' , sans-serif;
+  margin-top: 15px;
+  margin-left: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-wrap: break-word;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: pre-wrap;
+}
+
+.note p {
+  color: black;
+  font-size: 0.8em;
+  margin-top: 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
