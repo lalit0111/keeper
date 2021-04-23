@@ -3,6 +3,15 @@
   padding:  0;
 }
 
+*:focus{
+  outline: none;
+}
+
+html, body, #root, .App {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 header h1 {
   font-family: 'Montserrat';
   font-size: xx-large;
@@ -11,61 +20,153 @@ header h1 {
 }
 
 header {
+  display: block;
+  width: 100%;
   padding: 1em 0em 1em 1em;
   background-color: #fbbc04;
   box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
-footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 10px;
+.input-box {
+  border-radius: 3%;
+  padding: 10px;
+  margin: 10px 0px 20px 10px;
+  max-height: 100%;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.2);
+  background-color: white;
+
+  -webkit-column-break-inside: avoid; /* Chrome, Safari */
+  page-break-inside: avoid;           /* Theoretically FF 20+ */
+  break-inside: avoid-column;         /* IE 11 */
+  display:inline-block;
 }
 
-footer text {
-  font-family: 'Montserrat';
-  color: grey;
-  font-size: small;
+.title-input{
+  display: block;
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  resize: none;
+  float: right;
+  color: black;
+  overflow: hidden;
+  font-size: 1.2em;
+  font-family: 'Lato' , sans-serif;
+}
+
+.content-input{
+  display: block;
+  border: none;
+  width: 100%;
+  resize: none;
+  color: black;
+  font-size: 0.8em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.input-box button {
+  display: block;
+  margin: 10px auto 5px auto;
+  width: 70%;
+  background-color: #fbbc04;
+  border: none;
+  font-size: 0.7em;
+  color: white;
+  padding: 8px;
+  border-radius: 8%;
+}
+
+.input-box button:hover {
+  background-color: #fbaa00;
+}
+
+.grid {
+  padding-top: 20px;
+  column-width: 15vw;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-bottom: 20px;
+  -moz-column-width: 15vw;
+  -webkit-column-width: 15vw;
+  gap: 20px;
+  column-gap: 20px;
 }
 
 .note {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-bottom: 20px;
   border-radius: 3%;
-  width: 15%;
+  text-decoration: none;
+  overflow: hidden;
   color: white;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  break-inside: avoid;
   padding: 20px;
+
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  backface-visibility: hidden;
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+}
+
+.note:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
 }
 
 .note h3 {
   color: grey;
   font-family: 'Lato' , sans-serif;
   font-weight: 400;
-  display: block;
+  line-height: 0;
+  display: inline-block;
   font-size: 0.7em;
 }
 
-.dot {
+.remove {
+  margin-top: 2px;
+  float: right;
+}
+
+.titleContainer {
+  margin-top: 10px;
+}
+
+.note h1::before {
+  content: "";
   height: 7px;
   width: 7px;
-  float: left;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 2px;
   background-color: #fbbc04;
   border-radius: 50%;
-  margin-top: 22px;
 }
 
 .note h1 {
   color: black;
   font-size: 1.2em;
   font-family: 'Lato' , sans-serif;
-  margin-top: 15px;
-  margin-left: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
+  display: -webkit-inline-box;
+  word-break: break-all;
   word-wrap: break-word;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -81,4 +182,20 @@ footer text {
   margin-left: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+footer{
+  height: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+footer p {
+  font-family: 'Montserrat';
+  color: grey;
+  font-size: small;
 }

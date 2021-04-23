@@ -1,13 +1,22 @@
 import React from "react";
+import logo from "./close.png"
 
-function Note() {
+function Note(props) {
+
+    function deleteNote(){
+        props.deleteNote(props.id);
+    }
+
     return (
     <div className = "note">
-        <h3>23 June, 2019</h3>
-        <span className = "dot"></span>
-        <h1>The monkey-rope try this out jeiofji fenfeiofj woidjeiodjeio dwjdoi fjrniorjfi</h1>
-        <p>The id of an element is unique within a page, so the id selector is used to select one unique element
-            To select an element with a specific id, write a hash (#) character, followed by the id of the element.</p>
+        <div>
+            <h3>23 June, 2019</h3>
+            <img src={logo} width="15" height="15" className="remove" onClick={deleteNote} alt="Delete Node Button"/>
+        </div>
+        <div  className = "titleContainer">
+            <h1>{props.title}</h1>
+            <p>{props.content}</p>
+        </div>
     </div>
     );
 }
