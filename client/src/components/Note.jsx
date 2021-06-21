@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./close.png";
+import logo from "../images/close.png";
 
 function Note(props) {
   function deleteNote() {
